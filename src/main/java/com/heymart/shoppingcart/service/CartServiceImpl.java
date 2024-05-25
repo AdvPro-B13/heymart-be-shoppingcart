@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CartServiceImpl implements CartService {
@@ -30,32 +31,32 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Cart getCart(int uid) {
+    public Cart getCart(UUID uid) {
     return null;
     }
 
     @Override
-    public Cart addProduct(int uid, int supermarketId, int productId) {
+    public Cart addProduct(UUID userId, int supermarketId, String productId) {
         return null;
     }
 
     @Override
-    public Cart deleteProduct(int uid, int productId) {
+    public Cart deleteProduct(UUID userId, String productId) {
         return null;
     }
 
     @Override
-    public Cart addProductAmount(int uid, int productId) {
+    public Cart addProductAmount(UUID uid, String productId) {
         return null;
     }
 
     @Override
-    public Cart subtractProductAmount(int uid, int productId) {
+    public Cart subtractProductAmount(UUID userId, String productId) {
         return null;
     }
 
     @Override
-    public void checkout(int uid, int productId) {
+    public void checkout(UUID userId, String productId) {
 
     }
 }
