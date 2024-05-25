@@ -41,10 +41,7 @@ public class Cart {
         return userId;
     }
 
-    public void setSupermarketId(int supermarketId) {
-        if (supermarketId < 0) {
-            throw new IllegalArgumentException("Supermarket ID cannot be negative");
-        }
+    public void setSupermarketId(String supermarketId) {
         this.supermarketId = supermarketId;
     }
 
