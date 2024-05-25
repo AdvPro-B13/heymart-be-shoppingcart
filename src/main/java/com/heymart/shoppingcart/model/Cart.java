@@ -16,7 +16,7 @@ public class Cart {
     private UUID userId;
 
     @Column(name = "supermarket_id", nullable = false)
-    private int supermarketId;
+    private String supermarketId;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "cart_product_data", joinColumns = @JoinColumn(name = "cart_id"))
