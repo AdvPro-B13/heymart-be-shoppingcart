@@ -21,7 +21,7 @@ public class CartController {
     }
 
     @PostMapping("/add/{uid}/{supermarketId}/{productId}")
-    public String addProduct(@PathVariable UUID userId, int supermarketId, String productId) {
+    public String addProduct(@PathVariable UUID userId, String supermarketId, String productId) {
         service.addProduct(userId, supermarketId, productId);
         return "redirect:/cart/list";
     }

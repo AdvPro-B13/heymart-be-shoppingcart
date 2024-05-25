@@ -24,6 +24,8 @@ public class Cart {
     @Column(name = "product_amount")
     private HashMap<String, Integer> productData = new HashMap<>();
 
+    public Cart() {}
+
     public Cart(UUID userId) {
         this.userId = userId;
     }

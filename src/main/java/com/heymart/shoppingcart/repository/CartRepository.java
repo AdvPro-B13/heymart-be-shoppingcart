@@ -15,7 +15,8 @@ public class CartRepository {
         this.productRepository = productRepository;
     }
 
-    public Cart create(Cart c) {
+    public Cart create(UUID userId) {
+        Cart c = new Cart(userId);
         carts.add(c);
         return c;
     }

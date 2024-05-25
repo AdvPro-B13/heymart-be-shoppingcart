@@ -17,9 +17,8 @@ public class CartServiceImpl implements CartService {
     private CartRepository cartRepository;
 
     @Override
-    public Cart create(Cart c) {
-        cartRepository.create(c);
-        return c;
+    public void create(UUID userId) {
+        cartRepository.create(userId);
     }
 
     @Override
@@ -36,7 +35,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Cart addProduct(UUID userId, int supermarketId, String productId) {
+    public Cart addProduct(UUID userId, String supermarketId, String productId) {
         return null;
     }
 
