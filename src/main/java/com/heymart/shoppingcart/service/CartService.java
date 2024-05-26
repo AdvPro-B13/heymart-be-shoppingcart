@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.UUID;
 
 public interface CartService {
-    public void create(UUID userId);
+    public void create(Long userId);
     public List<Cart> findAll();
-    public Cart getCart(UUID userIid);
-    public Cart addProduct(UUID userId, String supermarketId, String productId);
-    public Cart deleteProduct(UUID userId, String productId);
-    public Cart addProductAmount(UUID userId, String productId);
-    public Cart subtractProductAmount(UUID userIid, String productId);
-    public void checkout(UUID userId, String productId);
+    public Cart getCart(Long userId);
+    public Cart addProduct(Long userId, String supermarketId, String productId);
+    public Cart deleteProduct(Long userId, String productId);
+    public Cart addProductAmount(Long userId, String productId);
+    public Cart subtractProductAmount(Long userIid, String productId);
+    public void checkout(Long userId, String productId);
 }

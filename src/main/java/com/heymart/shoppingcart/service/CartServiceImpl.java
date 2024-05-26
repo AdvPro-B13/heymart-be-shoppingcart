@@ -17,7 +17,7 @@ public class CartServiceImpl implements CartService {
     private CartRepository cartRepository;
 
     @Override
-    public void create(UUID userId) {
+    public void create(Long userId) {
         cartRepository.create(userId);
     }
 
@@ -30,32 +30,32 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Cart getCart(UUID uid) {
+    public Cart getCart(Long uid) {
     return null;
     }
 
     @Override
-    public Cart addProduct(UUID userId, String supermarketId, String productId) {
+    public Cart addProduct(Long userId, String supermarketId, String productId) {
         return null;
     }
 
     @Override
-    public Cart deleteProduct(UUID userId, String productId) {
+    public Cart deleteProduct(Long userId, String productId) {
         return null;
     }
 
     @Override
-    public Cart addProductAmount(UUID uid, String productId) {
+    public Cart addProductAmount(Long uid, String productId) {
         return null;
     }
 
     @Override
-    public Cart subtractProductAmount(UUID userId, String productId) {
+    public Cart subtractProductAmount(Long userId, String productId) {
         return null;
     }
 
     @Override
-    public void checkout(UUID userId, String productId) {
+    public void checkout(Long userId, String productId) {
 
     }
 }

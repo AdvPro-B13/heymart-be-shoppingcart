@@ -15,7 +15,7 @@ public class CartRepository {
         this.productRepository = productRepository;
     }
 
-    public Cart create(UUID userId) {
+    public Cart create(Long userId) {
         Cart c = new Cart(userId);
         carts.add(c);
         return c;
@@ -26,7 +26,7 @@ public class CartRepository {
     }
 
     // Connect to Product
-    public Cart getCart(UUID uid) {
+    public Cart getCart(Long uid) {
         for (Cart c : carts) {
             if (c.getUserId() == uid) {
                 return c;
@@ -36,10 +36,10 @@ public class CartRepository {
     }
 
     // Add an exception, if supermarketId == Cart.supermarketId then ask for product deletion for all the saved product in Cart, then add the new one
-    public Cart addProduct(UUID uid, int supermarketId, String productId) {
-        Cart c = getCart(uid);
+    public Cart addProduct(Long userId, int supermarketId, String productId) {
+        Cart c = getCart(userId);
         if (c == null) {
-            throw new IllegalArgumentException("Cart not found for user ID: " + uid);
+            throw new IllegalArgumentException("Cart not found for user ID: " + userId);
         }
 
         if (c.getSupermarketId() == supermarketId) {
@@ -56,30 +56,30 @@ public class CartRepository {
         return c;
     }
 
-    public Cart deleteProduct(UUID uid, String productId) {
-        Cart c = getCart(uid);
+    public Cart deleteProduct(Long userId, String productId) {
+        Cart c = getCart(userId);
         if (c == null) {
-            throw new IllegalArgumentException("Cart not found for user ID: " + uid);
+            throw new IllegalArgumentException("Cart not found for user ID: " + userId);
         }
 
         c.getProductData().remove(productId);
         return c;
     }
 
-    public Cart addProductAmount(UUID uid, String productId) {
-        Cart c = getCart(uid);
+    public Cart addProductAmount(Long userId, String productId) {
+        Cart c = getCart(userId);
         if (c == null) {
-            throw new IllegalArgumentException("Cart not found for user ID: " + uid);
+            throw new IllegalArgumentException("Cart not found for user ID: " + userId);
         }
         c.getProductData().put(productId, c.getProductData().getOrDefault(productId, 0) + 1);
         return c;
     }
 
     // If productAmount == 0 then do product deletion
-    public Cart subtractProductAmount(UUID uid, String productId) {
-        Cart c = getCart(uid);
+    public Cart subtractProductAmount(Long userId, String productId) {
+        Cart c = getCart(userId);
         if (c == null) {
-            throw new IllegalArgumentException("Cart not found for user ID: " + uid);
+            throw new IllegalArgumentException("Cart not found for user ID: " + userId);
         }
 
         int productAmount = c.getProductData().getOrDefault(productId, 0);

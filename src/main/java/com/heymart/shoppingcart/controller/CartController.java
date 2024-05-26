@@ -21,13 +21,13 @@ public class CartController {
     }
 
     @PostMapping("/add/{uid}/{supermarketId}/{productId}")
-    public String addProduct(@PathVariable UUID userId, String supermarketId, String productId) {
+    public String addProduct(@PathVariable Long userId, String supermarketId, String productId) {
         service.addProduct(userId, supermarketId, productId);
         return "redirect:/cart/list";
     }
 
     @PostMapping("/del/{uid}/{productId}")
-    public String deleteProduct(@PathVariable UUID userId, String productId) {
+    public String deleteProduct(@PathVariable Long userId, String productId) {
         service.deleteProduct(userId, productId);
         return "redirct:/cart/list";
     }

@@ -13,7 +13,7 @@ import java.util.UUID;
 public class Cart {
     @Id
     @Column(name = "user_id", nullable = false)
-    private UUID userId;
+    private Long userId;
 
     @Column(name = "supermarket_id", nullable = false)
     private String supermarketId;
@@ -26,18 +26,11 @@ public class Cart {
 
     public Cart() {}
 
-    public Cart(UUID userId) {
+    public Cart(Long userId) {
         this.userId = userId;
     }
 
-    public void setUserId(UUID userId) {
-        if (userId == null) {
-            throw new IllegalArgumentException("User ID cannot be null");
-        }
-        this.userId = userId;
-    }
-
-    public UUID getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
